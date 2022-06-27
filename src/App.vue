@@ -3,7 +3,9 @@
     <MyHeader title="MyTabBar案例"></MyHeader>
     <!-- 通过is属性绑定动态(页面)组件 -->
     <component :is="componentName"></component>
-    <MyFooter></MyFooter>
+    <MyFooter :tabList="tabList"
+    @change-current="componentName = $event"
+    ></MyFooter>
   </div>
 </template>
 
