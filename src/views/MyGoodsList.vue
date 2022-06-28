@@ -13,7 +13,7 @@
         <td>{{ item.goods_name }}</td>
         <td>{{ item.goods_price }}</td>
         <td>
-          <AddsTag></AddsTag>
+          <AddsTag @add-tag="addTag(item.tags, $event)"></AddsTag>
           <!-- 徽章 -->
           <span
           class="badge bg-warning text-dark"
@@ -64,6 +64,9 @@ export default {
           return false
         }
       })
+    },
+    addTag (tags, tagName) {
+      tags.push(tagName)
     }
   }
 }
